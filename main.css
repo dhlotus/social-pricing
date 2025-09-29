@@ -4,20 +4,24 @@
   --muted: #99a0b3;
   --accent: #6ee7b7;
   --accent-2: #60a5fa;
-  --glass: rgba(255, 255, 255, 0.04);
+  --glass: rgba(255, 255, 255, 0.05);
   --radius: 12px;
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial;
+  font-family: Inter, system-ui, Arial, sans-serif;
 }
+
 * {
   box-sizing: border-box;
 }
+
 html,
 body {
   margin: 0;
-  background: linear-gradient(180deg, #071023 0%, #061627 100%);
+  background: linear-gradient(120deg, #0f172a, #06121f);
   color: #e6eef8;
+  font-family: inherit;
+  min-height: 100vh;
 }
+
 .wrap {
   max-width: 880px;
   margin: 32px auto;
@@ -28,38 +32,43 @@ header {
   text-align: center;
   margin-bottom: 22px;
 }
+
 header h1 {
   margin: 0;
-  font-size: 22px;
+  font-size: 24px;
+  font-weight: 700;
 }
+
 header p {
   color: var(--muted);
   margin: 6px 0 0;
   font-size: 14px;
 }
+
 #avata {
-  width: 100px;
-  height: 100px;
-  background: url(myi.jpg) center/ cover;
+  width: 110px;
+  height: 110px;
+  background: url(myi.jpg) center/cover;
   margin: auto;
   border-radius: 50%;
-  margin-bottom: 12px;
-  box-shadow: 0 0 18px #555;
+  margin-bottom: 14px;
+  box-shadow: 0 0 18px rgba(110, 231, 183, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.card {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.02),
-    rgba(0, 0, 0, 0.06)
-  );
-  border-radius: var(--radius);
-  padding: 18px;
-  margin-bottom: 20px;
+#avata:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 28px rgba(110, 231, 183, 0.9);
 }
 
-.platform {
-  margin-bottom: 16px;
+.card {
+  background: var(--glass);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px);
 }
+
 .platform h2 {
   margin: 0 0 10px;
   font-size: 18px;
@@ -70,11 +79,16 @@ header p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 12px;
   border-radius: 10px;
-  background: var(--glass);
+  background: rgba(255, 255, 255, 0.06);
   margin-bottom: 10px;
+  transition: background 0.3s ease;
 }
+.service:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
 .service .name {
   font-weight: 600;
 }
@@ -84,33 +98,38 @@ header p {
 }
 .service .price {
   font-weight: 500;
-  color: rgba(0, 255, 0, 0.795);
+  color: #4ade80;
 }
 
-.calc {
-  margin-top: 20px;
-}
 .calc h2 {
   margin: 0 0 10px;
   font-size: 18px;
   color: var(--accent-2);
 }
+
 .calc .row {
   display: flex;
   gap: 10px;
   align-items: center;
   margin-bottom: 10px;
 }
+
 .calc input {
-  padding: 8px;
+  padding: 10px;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
   color: #fff;
   width: 120px;
+  outline: none;
 }
+.calc input:focus {
+  border-color: var(--accent-2);
+}
+
 .result {
-  margin-top: 10px;
+  margin-top: 12px;
   font-size: 16px;
   font-weight: 600;
+  color: var(--accent);
 }
