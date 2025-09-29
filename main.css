@@ -84,6 +84,7 @@ header p {
 }
 .service .price {
   font-weight: 500;
+  color: rgb(0, 255, 0);
 }
 
 .calc {
