@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Báo giá dịch vụ</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <a
+          href="https://www.facebook.com/bdh.lotus"
+          style="display: inline-block"
+          ><div id="avata"></div
+        ></a>
+        <h1>LOTUS</h1>
+        <p>Dùng cho cộng tác viên</p>
+      </header>
+
+      <div class="card platform">
+        <h2>Facebook</h2>
+        <div class="service">
+          <div>
+            <div class="name">Tăng Sub</div>
+            <div class="desc">Tăng người theo dõi trang cá nhân/page</div>
+          </div>
+          <div class="price">500₫ / sub</div>
+        </div>
+        <div class="service">
+          <div>
+            <div class="name">Tăng Like</div>
+            <div class="desc">Tăng lượt like bài viết</div>
+          </div>
+          <div class="price">50₫ / like</div>
+        </div>
+        <div class="service">
+          <div>
+            <div class="name">Tăng View Video</div>
+            <div class="desc">Tăng lượt xem video Facebook</div>
+          </div>
+          <div class="price">30₫ / view</div>
+        </div>
+      </div>
+
+      <div class="card platform">
+        <h2>TikTok</h2>
+        <div class="service">
+          <div>
+            <div class="name">Tăng Follow</div>
+            <div class="desc">Tăng người theo dõi tài khoản TikTok</div>
+          </div>
+          <div class="price">600₫ / follow</div>
+        </div>
+        <div class="service">
+          <div>
+            <div class="name">Tăng Tim</div>
+            <div class="desc">Tăng lượt thả tim video</div>
+          </div>
+          <div class="price">40₫ / tim</div>
+        </div>
+        <div class="service">
+          <div>
+            <div class="name">Tăng Share</div>
+            <div class="desc">Tăng lượt chia sẻ video</div>
+          </div>
+          <div class="price">120₫ / share</div>
+        </div>
+        <div class="service">
+          <div>
+            <div class="name">Tăng View</div>
+            <div class="desc">Tăng lượt xem video TikTok</div>
+          </div>
+          <div class="price">20₫ / view</div>
+        </div>
+      </div>
+
+      <div class="card calc">
+        <h2>Tính toán nhanh</h2>
+        <div class="row">
+          <label for="qty">Số lượng:</label>
+          <input type="number" id="qty" placeholder="VD: 1000" />
+        </div>
+        <div class="row">
+          <label for="price">Đơn giá (₫):</label>
+          <input type="number" id="price" placeholder="VD: 500" />
+        </div>
+        <div class="result">Tổng tiền: <span id="total">0₫</span></div>
+      </div>
+    </div>
+
+    <script>
+      const qtyInput = document.getElementById("qty");
+      const priceInput = document.getElementById("price");
+      const totalEl = document.getElementById("total");
+
+      function formatCurrency(n) {
+        return Number(n).toLocaleString("vi-VN") + "₫";
+      }
+
+      function calc() {
+        const qty = Number(qtyInput.value) || 0;
+        const price = Number(priceInput.value) || 0;
+        const total = qty * price;
+        totalEl.textContent = formatCurrency(total);
+      }
+
+      qtyInput.addEventListener("input", calc);
+      priceInput.addEventListener("input", calc);
+    </script>
+  </body>
+</html>
