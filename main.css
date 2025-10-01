@@ -123,6 +123,7 @@ header p {
   width: 120px;
   outline: none;
 }
+
 .calc input:focus {
   border-color: var(--accent-2);
 }
@@ -132,4 +133,8 @@ header p {
   font-size: 16px;
   font-weight: 600;
   color: var(--accent);
+}
+
+.container {
+  display: ;
 }
